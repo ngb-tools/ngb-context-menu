@@ -1,0 +1,173 @@
+<div class="container">
+
+  <h4>Example of directive for context menu.</h4>
+  <p ngbContextMenu [menuItems]="contextMenuItems" (selectedMenuItem)="onSelectedContextMenuItem($event)">
+    Right-click on this item to show the context menu.
+  </p>
+
+  <pre class="sample-code">
+    <code>
+  &lt;p ngbContextMenu [menuItems]="contextMenuItems" (selectedMenuItem)="onSelectedContextMenuItem($event)"&gt;
+    Right-click on this item to show the context menu.
+  &lt;/p&gt;
+
+
+  and in .ts:
+
+  contextMenuItems: NgbContextMenuItem[] = [
+    &#123;
+      id: 1,
+      label: 'Option 1',
+    &#125;,
+    &#123;
+      id: 100,
+      isDivider: true,
+    &#125;,
+    &#123;
+      id: 2,
+      label: 'Option 2',
+      icon: 'bi-apple',
+      iconTitle: 'Option 2',
+    &#125;,
+    &#123;
+      id: 3,
+      label: 'Option 3',
+      icon: 'bi-bar-chart',
+      iconTitle: 'Option 3',
+    &#125;,
+    &#123;
+      id: 101,
+      isDivider: true,
+    &#125;,
+    &#123;
+      id: 4,
+      label: 'Option 4',
+      icon: 'bi-alarm',
+      iconTitle: 'Option 4',
+      disabled: true,
+    &#125;,
+  ];
+  onSelectedContextMenuItem(selectedMenuItemId: number): void &#123;
+    alert('You chose the option with id ' + selectedMenuItemId);
+  &#125;
+    </code>
+  </pre>
+  <h4>Example of customizable context menu.</h4>
+  <p (contextmenu)="onContextMenu($event, myContextMenu)">Right-click on this item to show the context menu.</p>
+  <div
+    ngbDropdown
+    #myContextMenu="ngbDropdown"
+    [style.position]="'fixed'"
+    [style.left]="contextMenuPosition.x"
+    [style.top]="contextMenuPosition.y"
+    [style.z-index]="1099"
+  >
+    <div ngbDropdownMenu class="ngb-context-menu">
+      <div ngbDropdownItem disabled (click)="onContextMenuAction('Action 1')">
+        <span>Action 1</span>
+      </div>
+      <div ngbDropdownItem (click)="onContextMenuAction('Action 2')">
+        <span>Action 2</span>
+      </div>
+
+      <div class="dropdown-divider"></div>
+      <div class="dropdown-divider"></div>
+
+      <div ngbDropdownItem>
+        <span class="bi-sort-up" title="Sort Asc"></span>
+        <span>Sort Up</span>
+      </div>
+      <div ngbDropdownItem>
+        <span class="bi-sort-down" title="Sort Desc"></span>
+        <span>Sort Down</span>
+      </div>
+      <div class="input-item">
+        <span class="bi-filter" title="Filter"></span>
+        <input
+          (click)="onContextMenuSzmaFilter($event)"
+          placeholder="Any Filter"
+          type="text"
+        />
+      </div>
+
+      <div class="dropdown-divider"></div>
+      <div class="dropdown-divider"></div>
+
+      <div ngbDropdownItem>
+        <span class="bi-github" title="Check me on GitHub"></span>
+        <span>Check me on GitHub please!</span>
+      </div>
+    </div>
+  </div>
+
+  <pre class="sample-code">
+    <code>
+  &lt;p (contextmenu)="onContextMenu($event, myContextMenu)"&gt;Right-click on this item to show the context menu.&lt;/p&gt;
+  &lt;div
+    ngbDropdown
+    #myContextMenu="ngbDropdown"
+    [style.position]="'fixed'"
+    [style.left]="contextMenuPosition.x"
+    [style.top]="contextMenuPosition.y"
+    [style.z-index]="1099"
+  &gt;
+    &lt;div ngbDropdownMenu class="ngb-context-menu"&gt;
+      &lt;div ngbDropdownItem disabled (click)="onContextMenuAction('Action 1')"&gt;
+        &lt;span&gt;Action 1&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div ngbDropdownItem (click)="onContextMenuAction('Action 2')"&gt;
+        &lt;span&gt;Action 2&lt;/span&gt;
+      &lt;/div&gt;
+
+      &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+      &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+
+      &lt;div ngbDropdownItem&gt;
+        &lt;span class="bi-sort-up" title="Sort Asc"&gt;&lt;/span&gt;
+        &lt;span&gt;Sort Up&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div ngbDropdownItem&gt;
+        &lt;span class="bi-sort-down" title="Sort Desc"&gt;&lt;/span&gt;
+        &lt;span&gt;Sort Down&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="input-item"&gt;
+        &lt;span class="bi-filter" title="Filter"&gt;&lt;/span&gt;
+        &lt;input
+          (click)="onContextMenuSzmaFilter($event)"
+          placeholder="Any Filter"
+          type="text"
+        /&gt;
+      &lt;/div&gt;
+
+      &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+      &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+
+      &lt;div ngbDropdownItem&gt;
+        &lt;span class="bi-github" title="Check Me On GitHub"&gt;&lt;/span&gt;
+        &lt;span&gt;Check me on GitHub&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+  and in .ts:
+
+  // #region ContextMenu
+  contextMenuPosition = &#123; x: '0px', y: '0px' &#125;;
+  onContextMenu(event: MouseEvent, menu: NgbDropdown): void &#123;
+    event.preventDefault();
+    menu.open();
+    this.contextMenuPosition.x = !!event?.clientX ? event.clientX + 'px' : this.contextMenuPosition.x + 'px';
+    this.contextMenuPosition.y = !!event?.clientY ? event.clientY + 'px' : this.contextMenuPosition.y + 'px';
+  &#125;
+  onContextMenuAction(item): void &#123;
+    alert(`Click on Action for $&#123;item&#125;`);
+  &#125;
+  onContextMenuSzmaFilter(event): void &#123;
+    event.stopPropagation();
+  &#125;
+  // #endregion ContextMenu
+    </code>
+
+  </pre>
+</div>

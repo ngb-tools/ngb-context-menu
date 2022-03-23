@@ -1,0 +1,47 @@
+.ngb-context-menu {
+  box-shadow: 1px 1px 3px rgba(68, 68, 68, 0.5);
+  padding: 1px 0;
+
+  .dropdown-divider {
+    margin: 0.3rem 0 !important;
+  }
+  .dropdown-item,
+  .input-item {
+    padding: 0 !important;
+    height: 28px;
+    line-height: 17px;
+    display: inline-flex;
+    cursor: pointer !important;
+
+    span {
+      line-height: 17px;
+      vertical-align: middle;
+      align-self: center;
+      margin-left: 10px;
+      margin-right: 25px;
+    }
+
+    .ngb-icon {
+      font-size: 16px;
+      line-height: 17px;
+      margin-right: 0px !important;
+    }
+
+    &:hover {
+      background-color: #EEEFEA;
+    }
+
+    &:active {
+      background-color: #92A2BD;
+      color: #FFFFFF;
+    }
+  }
+
+  .input-item {
+    input {
+      height: 28px;
+      margin-left: 10px;
+      margin-right: 25px;
+    }
+  }
+}

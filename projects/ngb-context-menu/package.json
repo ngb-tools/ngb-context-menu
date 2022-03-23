@@ -24,5 +24,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "ngb-context-menu",
+    "bootstrap-context-menu",
+    "right-click-menu",
+    "context",
+    "menu",
+    "context-menu",
+    "context menu",
+    "right-click",
+    "bootstrap",
+    "angular",
+    "ngb",
+    "ng-bootstrap-menu",
+    "ngb-context",
+    "ngb-right-click-menu"
+  ],
   "license": "MIT"
 }

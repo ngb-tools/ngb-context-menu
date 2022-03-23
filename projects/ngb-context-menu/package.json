@@ -1,11 +1,11 @@
 {
-  "name": "ngb-context-menu",
-  "version": "0.0.1",
+  "name": "@ngb-tools-org/ngb-context-menu",
+  "version": "0.0.2",
   "description": "A simple context menu library, based on ng-bootstrap library",
   "author": "ngb-tools",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ngb-tools/ngb-context-menu"
+    "url": "git+https://github.com/ngb-tools/ngb-context-menu.git"
   },
   "peerDependencies": {
     "@angular/common": "^13.2.0",
@@ -15,5 +15,14 @@
   },
   "dependencies": {
     "tslib": "^2.3.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/ngb-tools/ngb-context-menu/issues"
+  },
+  "homepage": "https://github.com/ngb-tools/ngb-context-menu#readme",
+  "main": "src/public-api.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT"
 }

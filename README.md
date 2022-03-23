@@ -49,3 +49,5 @@ The Items: `.ngb-context-menu-item {}`
 If you want to play with some context menus you can clone the repository and run the demo project using the command:
 
     $ ng serve demo
+
+Or [StackBlitz](https://stackblitz.com/edit/angular-ivy-vmu9qg)

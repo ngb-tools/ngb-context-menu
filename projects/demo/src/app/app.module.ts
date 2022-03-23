@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import {NgbContextMenuModule} from "../../../ngb-context-menu/src/lib/ngb-context-menu.module";
+import {NgbContextMenuModule} from "../../../ngb-context-menu";
 import {NgbDropdownModule, NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {FormsModule} from "@angular/forms";
 

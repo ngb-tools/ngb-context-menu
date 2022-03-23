@@ -1,6 +1,12 @@
 {
   "name": "ngb-context-menu",
   "version": "0.0.1",
+  "description": "A simple context menu library, based on ng-bootstrap library",
+  "author": "ngb-tools",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngb-tools/ngb-context-menu"
+  },
   "peerDependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0",

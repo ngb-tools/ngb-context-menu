@@ -1,5 +1,5 @@
 {
-  "name": "@ngb-tools-org/ngb-context-menu",
+  "name": "ngb-context-menu",
   "version": "0.0.2",
   "description": "A simple context menu library, based on ng-bootstrap library",
   "author": "ngb-tools",

@@ -2,6 +2,14 @@
 
 NgbContextMenu is a small Angular library based on the NG-Bootstrap Library that will allow you to easily render a context menu using a directive and providing the options with different properties. We also provide an example of using the bootstrap library to render a totally customizable context menu.
 
+## Play with a real example
+
+If you want to play with some context menus, you can clone the repository, install the demo project and run it using the command:
+
+    $ ng serve demo
+
+Or you can check our example from [StackBlitz](https://stackblitz.com/edit/angular-ivy-vmu9qg).
+
 ## Install Guide
 
 ### Preconditions
@@ -42,12 +50,3 @@ The Menu Container: `.ngb-context-menu {}`
 The Divider: `.ngb-context-menu-divider {}`
 
 The Items: `.ngb-context-menu-item {}`
-
-
-## Play with a real example
-
-If you want to play with some context menus you can clone the repository and run the demo project using the command:
-
-    $ ng serve demo
-
-Or [StackBlitz](https://stackblitz.com/edit/angular-ivy-vmu9qg)

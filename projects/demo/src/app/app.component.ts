@@ -24,6 +24,12 @@ export class AppComponent {
   onContextMenuSzmaFilter(event: MouseEvent): void {
     event.stopPropagation();
   }
+  onKeydown(event: KeyboardEvent): void {
+    if (event.key === 'Enter') {
+      alert(`You pressed Enter`);
+      event.stopPropagation();
+    }
+  }
 
   contextMenuItems: NgbContextMenuItem[] = [
     {

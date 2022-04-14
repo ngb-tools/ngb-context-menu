@@ -31,6 +31,12 @@
             "tsConfig": "projects/ngb-context-menu/tsconfig.spec.json",
             "karmaConfig": "projects/ngb-context-menu/karma.conf.js"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/ngb-context-menu/src/**/*.ts", "projects/ngb-context-menu/src/**/*.html"]
+          }
         }
       }
     },
@@ -57,13 +63,8 @@
             "polyfills": "projects/demo/src/polyfills.ts",
             "tsConfig": "projects/demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "projects/demo/src/favicon.ico",
-              "projects/demo/src/assets"
-            ],
-            "styles": [
-              "projects/demo/src/styles.scss"
-            ],
+            "assets": ["projects/demo/src/favicon.ico", "projects/demo/src/assets"],
+            "styles": ["projects/demo/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -125,14 +126,15 @@
             "tsConfig": "projects/demo/tsconfig.spec.json",
             "karmaConfig": "projects/demo/karma.conf.js",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "projects/demo/src/favicon.ico",
-              "projects/demo/src/assets"
-            ],
-            "styles": [
-              "projects/demo/src/styles.scss"
-            ],
+            "assets": ["projects/demo/src/favicon.ico", "projects/demo/src/assets"],
+            "styles": ["projects/demo/src/styles.scss"],
             "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/demo/src/**/*.ts", "projects/demo/src/**/*.html"]
           }
         }
       }

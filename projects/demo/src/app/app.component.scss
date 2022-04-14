@@ -15,3 +15,17 @@ p {
   padding: 10px;
   background-color: lightgoldenrodyellow;
 }
+
+.input-item {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 1rem;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}

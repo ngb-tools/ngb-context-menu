@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import {NgbContextMenuItem} from "../../../ngb-context-menu/src/lib/models/context-menu.model";
-import {NgbDropdown} from "@ng-bootstrap/ng-bootstrap";
+import { NgbContextMenuItem } from '../../../ngb-context-menu';
+import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'demo';
@@ -23,6 +23,12 @@ export class AppComponent {
   }
   onContextMenuSzmaFilter(event: MouseEvent): void {
     event.stopPropagation();
+  }
+  onKeydown(event: KeyboardEvent): void {
+    if (event.key === 'Enter') {
+      alert(`You pressed Enter`);
+      event.stopPropagation();
+    }
   }
 
   contextMenuItems: NgbContextMenuItem[] = [

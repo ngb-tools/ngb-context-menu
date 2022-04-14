@@ -1,5 +1,4 @@
 <div class="container">
-
   <h4>Example of directive for context menu.</h4>
   <p ngbContextMenu [menuItems]="contextMenuItems" (selectedMenuItem)="onSelectedContextMenuItem($event)">
     Right-click on this item to show the context menu.
@@ -75,19 +74,15 @@
 
       <div ngbDropdownItem>
         <span class="bi-sort-up" title="Sort Asc"></span>
-        <span>Sort Up</span>
+        <span class="ms-1">Sort Up</span>
       </div>
       <div ngbDropdownItem>
         <span class="bi-sort-down" title="Sort Desc"></span>
-        <span>Sort Down</span>
+        <span class="ms-1">Sort Down</span>
       </div>
       <div class="input-item">
         <span class="bi-filter" title="Filter"></span>
-        <input
-          (click)="onContextMenuSzmaFilter($event)"
-          placeholder="Any Filter"
-          type="text"
-        />
+        <input (click)="onContextMenuSzmaFilter($event)" (keydown)="onKeydown($event)" class="ms-1" placeholder="Any Filter" type="text" />
       </div>
 
       <div class="dropdown-divider"></div>
@@ -95,7 +90,7 @@
 
       <div ngbDropdownItem>
         <span class="bi-github" title="Check me on GitHub"></span>
-        <span>Check me on GitHub please!</span>
+        <span class="ms-1">Check me on GitHub please!</span>
       </div>
     </div>
   </div>

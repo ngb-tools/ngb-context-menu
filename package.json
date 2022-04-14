@@ -5,7 +5,10 @@
     "ng": "ng",
     "start": "ng serve demo",
     "build": "ng build ngb-context-menu",
-    "test": "ng test"
+    "test": "ng test",
+    "lint": "ng lint",
+    "precommit": "pretty-quick --staged && lint-staged",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -27,18 +30,30 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.2.6",
+    "@angular-eslint/builder": "13.2.0",
+    "@angular-eslint/eslint-plugin": "13.2.0",
+    "@angular-eslint/eslint-plugin-template": "13.2.0",
+    "@angular-eslint/schematics": "13.2.0",
+    "@angular-eslint/template-parser": "13.2.0",
     "@angular/cli": "~13.2.2",
     "@angular/compiler-cli": "~13.2.0",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "5.17.0",
+    "@typescript-eslint/parser": "5.17.0",
     "bootstrap-icons": "^1.8.1",
+    "eslint": "^8.12.0",
+    "husky": "^7.0.0",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "lint-staged": "^12.3.7",
     "ng-packagr": "^13.0.0",
+    "prettier": "^2.6.2",
+    "pretty-quick": "^3.1.3",
     "typescript": "~4.5.2"
   }
 }
